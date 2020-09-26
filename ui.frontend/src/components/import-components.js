@@ -17,5 +17,7 @@
 import './Page/Page';
 import './Text/Text';
 import './Title/Title';
+import './Header/Header';
+import './Hero/Hero';
 import './Container/Container';
 import './ExperienceFragment/ExperienceFragment';
