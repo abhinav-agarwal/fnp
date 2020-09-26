@@ -75,7 +75,7 @@
                 <artifactId>content-package-maven-plugin</artifactId>
                 <extensions>true</extensions>
                 <configuration>
-                    <verbose>true</verbose>
+                    <verbose>false</verbose>
                     <failOnError>true</failOnError>
                 </configuration>
             </plugin>
