@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/fnp" mode="merge"/>
+    <filter root="/content/fnp" mode="merge"/>
+    <filter root="/content/dam/fnp" mode="merge"/>
+    <filter root="/content/experience-fragments/fnp" mode="merge"/>
+</workspaceFilter>
