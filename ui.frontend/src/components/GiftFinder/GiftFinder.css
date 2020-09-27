@@ -1,1 +1,22 @@
-.Gift-Finder{}
+.finder-container{
+    padding: 15px 20px;
+      
+     @media only screen and (min-width:921px) {
+      width:70% !important;
+     }
+    @media only screen and (max-width:921px) {
+     width:100% !important;
+    }
+    }
+    
+    .finder-label{
+        color: #222;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1;
+        text-align: left;
+        float: left;
+        width: 10%;
+        margin: 0;
+        text-transform: uppercase;
+    }
