@@ -65,8 +65,4 @@ public class CategoriesImpl implements Categories {
     return categoryDetails;
   }
 
-//  @Override
-//  public List<Map> getCategoryDetails() {
-//    return null;
-//  }
 }
