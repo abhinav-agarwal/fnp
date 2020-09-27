@@ -20,6 +20,7 @@ import './Title/Title';
 import './Header/Header';
 import './Categories/Categories';
 import './BestSeller/BestSeller';
+import './Trending/Trending';
 import './Hero/Hero';
 import './Container/Container';
 import './ExperienceFragment/ExperienceFragment';

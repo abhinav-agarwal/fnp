@@ -2,14 +2,12 @@ package com.fnp.core.models.impl;
 
 import com.adobe.cq.export.json.ComponentExporter;
 import com.adobe.cq.export.json.ExporterConstants;
-import com.day.cq.wcm.api.Page;
 import com.fnp.core.models.BestSeller;
-import com.fnp.core.models.Categories;
+import com.fnp.core.models.Trending;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ValueMap;
@@ -22,10 +20,10 @@ import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-@Model(adaptables = SlingHttpServletRequest.class, adapters = {BestSeller.class,
-    ComponentExporter.class}, resourceType = BestSellerImpl.RESOURCE_TYPE, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
+@Model(adaptables = SlingHttpServletRequest.class, adapters = {Trending.class,
+    ComponentExporter.class}, resourceType = TrendingImpl.RESOURCE_TYPE, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 @Exporter(name = ExporterConstants.SLING_MODEL_EXPORTER_NAME, extensions = ExporterConstants.SLING_MODEL_EXTENSION)
-public class BestSellerImpl implements BestSeller {
+public class TrendingImpl implements Trending {
 
   @ValueMapValue(
       name = "mainTitle",
@@ -33,22 +31,16 @@ public class BestSellerImpl implements BestSeller {
   )
   protected String mainTitle;
 
-  @ValueMapValue(
-      name = "ctaLabel",
-      injectionStrategy = InjectionStrategy.OPTIONAL
-  )
-  protected String ctaLabel;
-
   @SlingObject
   protected Resource resource;
 
 
-  private static final Logger LOGGER = LoggerFactory.getLogger(BestSellerImpl.class);
-  static final String RESOURCE_TYPE = "fnp/components/bestSeller";
+  private static final Logger LOGGER = LoggerFactory.getLogger(TrendingImpl.class);
+  static final String RESOURCE_TYPE = "fnp/components/trending";
 
   @Override
   public String getExportedType() {
-    return BestSellerImpl.RESOURCE_TYPE;
+    return TrendingImpl.RESOURCE_TYPE;
   }
 
   @Override
@@ -62,6 +54,7 @@ public class BestSellerImpl implements BestSeller {
           Map<String, String> iconMap = new HashMap<>();
           iconMap.put("imagePath", valueMap.get("imagePath", String.class));
           iconMap.put("imageTitle", valueMap.get("imageTitle", String.class));
+          iconMap.put("price", valueMap.get("price", String.class));
           categoryDetails.add(iconMap);
         }
       }
@@ -74,8 +67,4 @@ public class BestSellerImpl implements BestSeller {
     return this.mainTitle;
   }
 
-  @Override
-  public String getCTALabel() {
-    return this.ctaLabel;
-  }
 }

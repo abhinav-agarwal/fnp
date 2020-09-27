@@ -3,7 +3,7 @@
   xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
   xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
   jcr:primaryType="nt:unstructured"
-  jcr:title="Best Seller"
+  jcr:title="Trending Now"
   sling:resourceType="cq/gui/components/authoring/dialog">
   <content
     jcr:primaryType="nt:unstructured"
@@ -33,11 +33,6 @@
                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                         fieldLabel="Title"
                         name="./mainTitle"/>
-                      <ctaLabel
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                        fieldLabel="CTA Label"
-                        name="./ctaLabel"/>
                       <multi
                         granite:class=""
                         jcr:primaryType="nt:unstructured"
@@ -63,6 +58,12 @@
                                   sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                   fieldLabel="Image Title"
                                   name="./imageTitle"/>
+                                <price
+                                  jcr:primaryType="nt:unstructured"
+                                  sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                  fieldLabel="Product price"
+                                  min="{Long}1"
+                                  name="./price"/>
                               </items>
                             </container>
                           </items>
