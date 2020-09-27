@@ -30,8 +30,8 @@ export default class Categories extends Component {
             return (
                 <li key={index} className="some-class">
                     <div className="category d-flex flex-column px-3">
-                          <div className="category-img"> <img src="${item.imagePath}" alt="category-img" /></div>
-                          <div className="category-name">${item.label}</div>
+                          <div className="category-img"> <img src={item.imagePath} alt="category-img" /></div>
+                          <div className="category-name">{item.label}</div>
                     </div>
                 </li>
             );

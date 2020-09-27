@@ -32,8 +32,8 @@ export default class Header extends Component {
     renderNavItem(item, index) {
         return (
             <li key={index} className="some-class">
-                 <img className="nav-icons" src="${item.iconClass}" alt="icons"/> 
-                 <span className="d-block">${item.iconLabel}</span>
+                 <img className="nav-icons" src={item.iconClass} alt="icons"/>
+                 <span className="d-block">{item.iconLabel}</span>
                         </li>
         );
    }
@@ -51,8 +51,8 @@ export default class Header extends Component {
             <Navbar.Collapse id="responsive-navbar-nav" className="fnp__navbar py-2 pl-lg-2 px-0">
               <Nav className="mr-auto">
               <Form inline>
-                <FormControl type="text" placeholder="Search" className="nav-input mr-sm-2" placeholder="${this.props.searchButtonText}"/>
-                <Button variant="outline-info" className="btn-success btn-label">${this.props.ctalabel}</Button>
+                <FormControl type="text" placeholder="Search" className="nav-input mr-sm-2" placeholder={this.props.searchButtonText} />
+                <Button variant="outline-info" className="btn-success btn-label">{this.props.ctalabel}</Button>
               </Form>
               </Nav>
               <Nav> 
