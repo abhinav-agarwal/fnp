@@ -20,7 +20,7 @@ import {
   withComponentMappingContext
 } from '@adobe/aem-react-editable-components';
 import { withRoute } from '../RouteHelper/RouteHelper';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 require('./Page.css');
 
 // This component is a variant of a Page component mapped to the
