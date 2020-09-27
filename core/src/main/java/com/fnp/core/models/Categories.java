@@ -8,4 +8,8 @@ public interface Categories extends ComponentExporter {
 
   List<Map> getCategoryDetails();
 
+  String getTitle();
+
+  String getSubTitle();
+
 }

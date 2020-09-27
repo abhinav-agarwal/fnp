@@ -32,6 +32,18 @@ public class CategoriesImpl implements Categories {
   )
   protected String parentPage;
 
+  @ValueMapValue(
+      name = "mainTitle",
+      injectionStrategy = InjectionStrategy.OPTIONAL
+  )
+  protected String mainTitle;
+
+  @ValueMapValue(
+      name = "subTitle",
+      injectionStrategy = InjectionStrategy.OPTIONAL
+  )
+  protected String subTitle;
+
   @SlingObject
   protected Resource resource;
 
@@ -63,6 +75,16 @@ public class CategoriesImpl implements Categories {
       }
     }
     return categoryDetails;
+  }
+
+  @Override
+  public String getTitle() {
+    return this.mainTitle;
+  }
+
+  @Override
+  public String getSubTitle() {
+    return this.subTitle;
   }
 
 }
