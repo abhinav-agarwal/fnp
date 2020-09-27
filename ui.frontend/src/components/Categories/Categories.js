@@ -47,7 +47,14 @@ export default class Categories extends Component {
             <div className="container-fluid categories-outer d-flex flex-column">
             <div className="categories-inner-div d-flex flex-nowrap justify-content-between w-100 overflow-lg-hidden overflow-auto pt-4 pb-2">
                           {this.renderCategories(this.props.categoryDetails)}
+
             </div>
+            <div className="category-component-title d-lg-block d-none text-center">
+                  Fresh Flowers & Perfect Gifts for all Occasions
+                  </div>
+                  <div className="category-component-subtitle d-lg-block d-none text-center">
+                  3 Hour Delivery & Free Shipping in India. 38,394 Gift Ideas for your Beloved
+                  </div>
             </div>
             </div>
         );

@@ -9,9 +9,8 @@
     transition: none;
     vertical-align: middle;
     border: 1px solid #bbb;
-    border-right: 0;
     box-shadow: 0 0 5px rgba(0,0,0,0.2) inset;
-    border-radius: 4px 0 0 4px;
+    border-radius: 4px 4px 4px 4px;
     max-height: 40px;
     min-height: 40px;
     background: #fdfdfd;

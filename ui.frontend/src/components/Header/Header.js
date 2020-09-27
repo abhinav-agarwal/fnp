@@ -34,7 +34,7 @@ export default class Header extends Component {
             <div className="d-flex flex-column justify-content-center align-items-center pl-lg-5">
                  <img className="nav-icons" src={item.iconClass} alt="icons"/>
                  <span className="d-block">{item.iconLabel}</span>
-                        </div>
+            </div>
         );
    }
 
