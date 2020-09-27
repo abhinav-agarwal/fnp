@@ -18,22 +18,22 @@ export default class Categories extends Component {
         if(children === null || children.length < 1 ) {
             return null;
         }
-        return (<ul>
+        return (<div className="categories-inner-div d-flex flex-nowrap justify-content-between w-100 overflow-lg-hidden overflow-auto pt-4 pb-2">
                     {children.map(
                         (item,index) => { return this.renderImageDetails(item,index)}
                     )}
-                </ul>
+                </div>
         );
     }
 
     renderImageDetails(item, index) {
             return (
-                <li key={index} className="some-class">
+                <div key={index} className="d-flex flex-column justify-content-center align-items-center">
                     <div className="category d-flex flex-column px-3">
                           <div className="category-img"> <img src={item.imagePath} alt="category-img" /></div>
-                          <div className="category-name">{item.label}</div>
+                          <div className="category-name text-center">{item.label}</div>
                     </div>
-                </li>
+                </div>
             );
        }
 
@@ -45,9 +45,9 @@ export default class Categories extends Component {
         return (
             <div class="Categories">
             <div className="container-fluid categories-outer d-flex flex-column">
-            <div className="categories-inner-div d-flex flex-nowrap justify-content-between w-100 overflow-lg-hidden overflow-auto pt-4 pb-2">
+
                           {this.renderCategories(this.props.categoryDetails)}
-            </div>
+
             </div>
             </div>
         );
