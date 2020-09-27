@@ -1,1 +1,29 @@
-.Header {}
+.nav-input{
+    font-weight: normal;
+    color: rgba(0,0,0,0.75);
+    font-size: 13px;
+    width: 350px !important;
+    display: inline-block;
+    margin: 0;
+    height: auto;
+    transition: none;
+    vertical-align: middle;
+    border: 1px solid #bbb;
+    border-right: 0;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2) inset;
+    border-radius: 4px 0 0 4px;
+    max-height: 40px;
+    min-height: 40px;
+    background: #fdfdfd;
+    transition: all ease-in-out .25s;
+    padding: 12px;
+    box-sizing: border-box;
+}
+.btn-label{
+    color: #fff !important;
+}
+
+.nav-icons{
+    width: 20px;
+    height: 20px;
+}

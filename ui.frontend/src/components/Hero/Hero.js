@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {MapTo} from '@adobe/aem-react-editable-components';
+import { Carousel} from 'react-bootstrap';
 
 require('./Hero.css');
 
@@ -30,10 +31,10 @@ export default class Hero extends Component {
     renderImageDetails(item, index) {
         return (
             <li key={index} className="some-class">
-                                icon class: ${item.imagePath}<br/>
-                                icon label: ${item.altText}
-
-                        </li>
+                                <Carousel.Item>
+                                <img className="d-block w-100" src="${item.imagePath}" alt="${item.altText}"/>
+                                </Carousel.Item>
+            </li>
         );
    }
 
@@ -42,11 +43,13 @@ export default class Hero extends Component {
         if(HeroEditConfig.isEmpty(this.props)) {
             return null;
         }
-
         return (
-            <div class="Hero">
-              <div>{this.renderImages(this.props.imageDetails)}</div>
-            </div>
+                <div class="Hero">
+                    <Carousel>
+                    {this.renderImages(this.props.imageDetails)}
+                    </Carousel>
+                </div>
+            
         );
     }
 }
