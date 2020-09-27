@@ -18,6 +18,7 @@ import './Page/Page';
 import './Text/Text';
 import './Title/Title';
 import './Header/Header';
+import './Categories/Categories';
 import './Hero/Hero';
 import './Container/Container';
 import './ExperienceFragment/ExperienceFragment';
