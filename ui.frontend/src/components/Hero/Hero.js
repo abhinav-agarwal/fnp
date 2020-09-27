@@ -9,7 +9,6 @@ export const HeroEditConfig = {
     emptyLabel: 'Hero',
 
     isEmpty: function(props) {
-        console.log('Hero - isEmpty');
         return !props || !props.imageDetails || props.imageDetails.length < 1 ;
     }
 };
@@ -32,14 +31,13 @@ export default class Hero extends Component {
         return (
             <li key={index} className="some-class">
                                 <Carousel.Item>
-                                <img className="d-block w-100" src="${item.imagePath}" alt="${item.altText}"/>
+                                <img className="d-block w-100" src={item.imagePath} alt={item.altText}/>
                                 </Carousel.Item>
             </li>
         );
    }
 
     render() {
-        console.log('Hero - render');
         if(HeroEditConfig.isEmpty(this.props)) {
             return null;
         }
