@@ -21,20 +21,20 @@ export default class Header extends Component {
         if(children === null || children.length < 1 ) {
             return null;
         }
-        return (<ul>
+        return (<div className=" d-flex flex-row justify-content-center align-items-center pl-lg-5">
                     {children.map(
                         (item,index) => { return this.renderNavItem(item,index)}
                     )}
-                </ul>
+                </div>
         );
     }
 
     renderNavItem(item, index) {
         return (
-            <li key={index} className="some-class">
+            <div className="d-flex flex-column justify-content-center align-items-center pl-lg-5">
                  <img className="nav-icons" src={item.iconClass} alt="icons"/>
                  <span className="d-block">{item.iconLabel}</span>
-                        </li>
+                        </div>
         );
    }
 
@@ -57,9 +57,9 @@ export default class Header extends Component {
               </Nav>
               <Nav> 
                 <Nav.Link  className="d-flex flex-lg-row flex-column">
-                 <div className=" d-flex flex-column justify-content-center align-items-center pl-lg-5">
+
                  {this.renderIcons(this.props.iconDetails)}
-                 </div>
+
                 </Nav.Link>
               </Nav>
             </Navbar.Collapse>
