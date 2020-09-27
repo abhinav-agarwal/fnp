@@ -19,21 +19,21 @@ export default class Hero extends Component {
         if(children === null || children.length < 1 ) {
             return null;
         }
-        return (<ul>
+        return ( <Carousel>
                     {children.map(
                         (item,index) => { return this.renderImageDetails(item,index)}
                     )}
-                </ul>
+              </Carousel>
         );
     }
 
     renderImageDetails(item, index) {
         return (
-            <li key={index} className="some-class">
+           
                                 <Carousel.Item>
                                 <img className="d-block w-100" src={item.imagePath} alt={item.altText}/>
                                 </Carousel.Item>
-            </li>
+         
         );
    }
 
@@ -43,9 +43,9 @@ export default class Hero extends Component {
         }
         return (
                 <div class="Hero">
-                    <Carousel>
+                   
                     {this.renderImages(this.props.imageDetails)}
-                    </Carousel>
+                    
                 </div>
             
         );
