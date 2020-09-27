@@ -103,14 +103,22 @@
                                       jcr:primaryType="nt:unstructured"
                                       text="Select"
                                       value=""/>
-                                    <toolbox
+                                    <clock
                                       jcr:primaryType="nt:unstructured"
-                                      text="Toolbox"
-                                      value="tool-box-small"/>
-                                    <userOutline
+                                      text="Clock"
+                                      value="/content/dam/fnp/header/icons/clock.svg"/>
+                                    <cart
                                       jcr:primaryType="nt:unstructured"
-                                      text="User Outline"
-                                      value="user-outline-icon"/>
+                                      text="cart"
+                                      value="/content/dam/fnp/header/icons/shopping-cart.svg"/>
+                                    <profile
+                                      jcr:primaryType="nt:unstructured"
+                                      text="user profile"
+                                      value="/content/dam/fnp/header/icons/profile-user.svg"/>
+                                    <help
+                                      jcr:primaryType="nt:unstructured"
+                                      text="help"
+                                      value="/content/dam/fnp/header/icons/question.svg"/>
                                   </items>
                                 </showNavIcon>
                                 <iconLabel
