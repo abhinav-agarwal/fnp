@@ -46,12 +46,12 @@ export default class Header extends Component {
         return (
             <div className="Header">
             <Navbar collapseOnSelect expand="lg">
-            <Navbar.Brand href="#home"><img src={this.props.imageSrc} width="200"  /></Navbar.Brand>
+            <Navbar.Brand href="#home"><img src={this.props.imageSrc} width="200" alt="sample" /></Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav" className="fnp__navbar py-2 pl-lg-2 px-0">
               <Nav className="mr-auto">
               <Form inline>
-                <FormControl type="text" placeholder="Search" className="nav-input mr-sm-2" placeholder={this.props.searchButtonText} />
+                <FormControl type="text" className="nav-input mr-sm-2" placeholder={this.props.searchButtonText} />
                 <Button variant="outline-info" className="btn-success btn-label">{this.props.ctalabel}</Button>
               </Form>
               </Nav>
