@@ -18,22 +18,25 @@ export default class Trending extends Component {
         if(children === null || children.length < 1 ) {
             return null;
         }
-        return (<ul>
+        return (  <div className="trending-cards-div d-flex ">
                     {children.map(
                         (item,index) => { return this.renderImageDetails(item,index)}
                     )}
-                </ul>
+             </div>
         );
     }
 
     renderImageDetails(item, index) {
         return (
-            <li key={index} className="some-class">
-                                imagePath: ${item.imagePath}<br/>
-                                imageTitle: ${item.imageTitle}<br/>
-                                price: ${item.price}
-
-                        </li>
+              <div className="trending-card col-lg-3 col-md-4 col-11 ">
+                    <div className="border trending-card-outer">
+                        <div className="trending-card-img  px-2 py-2">
+                            <img src={item.imagePath} alt={item.imageTitle}/>
+                        </div>
+                        <div className="trending-card-name pt-1 text-left px-2">{item.imageTitle}</div>
+                        <div className="trending-card-price text-left px-2"> {item.price}</div>
+                    </div>
+                </div>
         );
    }
 
@@ -43,10 +46,13 @@ export default class Trending extends Component {
         }
 
         return (
-            <div class="Trending">
-              <div>title: ${this.props.title}</div>
+            <div class="Trending trending-outer container-fluid d-flex flex-column pb-3 border rounded">
+              {/* <div>title: ${this.props.title}</div>
               <div>ctaLabel: ${this.props.ctaLabel}</div>
-              <div>{this.renderImages(this.props.items)}</div>
+              <div>{this.renderImages(this.props.items)}</div> */}
+           
+           <div className="trending-title">{this.props.title}</div>
+               {this.renderImages(this.props.items)}
             </div>
         );
     }
