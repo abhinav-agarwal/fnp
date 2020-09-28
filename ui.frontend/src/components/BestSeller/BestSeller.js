@@ -18,21 +18,24 @@ export default class BestSeller extends Component {
         if(children === null || children.length < 1 ) {
             return null;
         }
-        return (<ul>
+        return (<div className="bestseller-cards-div d-flex ">
                     {children.map(
                         (item,index) => { return this.renderImageDetails(item,index)}
                     )}
-                </ul>
+                </div>
         );
     }
 
     renderImageDetails(item, index) {
         return (
-            <li key={index} className="some-class">
-                                imagePath: ${item.imagePath}<br/>
-                                imageTitle: ${item.imageTitle}
-
-                        </li>
+            <div className="bestseller-card col-lg-3 col-md-4 col-11 ">
+              <div className="border bestseller-card-outer">
+                <div className="bestseller-card-img  px-2 py-2">
+                    <img src={item.imagePath} alt={item.imageTitle}/>
+                </div>
+                <div className="bestseller-card-name pt-1 text-left px-2">{item.imageTitle}</div>
+              </div>
+            </div>
         );
    }
 
@@ -42,10 +45,11 @@ export default class BestSeller extends Component {
         }
 
         return (
-            <div class="BestSeller">
-              <div>title: ${this.props.title}</div>
-              <div>ctaLabel: ${this.props.ctaLabel}</div>
-              <div>{this.renderImages(this.props.items)}</div>
+            <div class="BestSeller bestseller-outer container-fluid d-flex flex-column pb-3 border rounded">
+                <div className="bestseller-title">
+                    {this.props.title}
+                </div>
+                {this.renderImages(this.props.items)}
             </div>
         );
     }

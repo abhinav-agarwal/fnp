@@ -47,12 +47,10 @@ export default class Trending extends Component {
 
         return (
             <div class="Trending trending-outer container-fluid d-flex flex-column pb-3 border rounded">
-              {/* <div>title: ${this.props.title}</div>
-              <div>ctaLabel: ${this.props.ctaLabel}</div>
-              <div>{this.renderImages(this.props.items)}</div> */}
-           
-           <div className="trending-title">{this.props.title}</div>
-               {this.renderImages(this.props.items)}
+                <div className="trending-title">
+                    {this.props.title}
+                </div>
+                {this.renderImages(this.props.items)}
             </div>
         );
     }
