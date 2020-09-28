@@ -18,7 +18,7 @@ export default class Trending extends Component {
         if(children === null || children.length < 1 ) {
             return null;
         }
-        return (  <div className="trending-cards-div d-flex ">
+        return (  <div className="trending-cards-div d-flex">
                     {children.map(
                         (item,index) => { return this.renderImageDetails(item,index)}
                     )}
@@ -29,8 +29,8 @@ export default class Trending extends Component {
     renderImageDetails(item, index) {
         return (
               <div className="trending-card col-lg-3 col-md-4 col-11 ">
-                    <div className="border trending-card-outer">
-                        <div className="trending-card-img  px-2 py-2">
+                    <div className="border trending-card-outer px-2 py-2">
+                        <div className="trending-card-img overlow-hidden">
                             <img src={item.imagePath} alt={item.imageTitle}/>
                         </div>
                         <div className="trending-card-name pt-1 text-left px-2">{item.imageTitle}</div>
@@ -46,7 +46,7 @@ export default class Trending extends Component {
         }
 
         return (
-            <div class="Trending trending-outer container-fluid d-flex flex-column pb-3 border rounded">
+            <div class="Trending trending-outer container-fluid d-flex flex-column pb-3 mb-4 border rounded">
                 <div className="trending-title">
                     {this.props.title}
                 </div>

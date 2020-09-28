@@ -43,7 +43,7 @@ export default class Categories extends Component {
         }
 
         return (
-            <div class="Categories pb-3">
+            <div class="Categories pb-4">
               <div className="container-fluid categories-outer d-flex flex-column">
                             {this.renderCategories(this.props.categoryDetails)}
               </div>

@@ -28,12 +28,12 @@ export default class BestSeller extends Component {
 
     renderImageDetails(item, index) {
         return (
-            <div className="bestseller-card col-lg-3 col-md-4 col-11 ">
-              <div className="border bestseller-card-outer">
-                <div className="bestseller-card-img  px-2 py-2">
+            <div className="bestseller-card col-lg-3 col-md-4 col-11 mb-3">
+              <div className="border bestseller-card-outer px-2 pt-2">
+                <div className="bestseller-card-img overflow-hidden">
                     <img src={item.imagePath} alt={item.imageTitle}/>
                 </div>
-                <div className="bestseller-card-name pt-1 text-left px-2">{item.imageTitle}</div>
+                <div className="bestseller-card-name py-2 text-center px-2">{item.imageTitle}</div>
               </div>
             </div>
         );
@@ -45,10 +45,15 @@ export default class BestSeller extends Component {
         }
 
         return (
-            <div class="BestSeller bestseller-outer container-fluid d-flex flex-column pb-3 border rounded">
-                <div className="bestseller-title">
+            <div class="BestSeller bestseller-outer container-fluid d-flex flex-column pb-3 border rounded mb-4">
+               <div className="bestseller-title-div d-flex">
+               <div className="bestseller-title">
                     {this.props.title}
                 </div>
+                <div className="bestseller-link d-lg-block d-none">
+                    <input type="submit" className="btn-success p-2" value={this.props.ctaLabel}/>
+                </div>
+               </div>
                 {this.renderImages(this.props.items)}
             </div>
         );

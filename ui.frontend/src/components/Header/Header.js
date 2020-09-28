@@ -21,7 +21,7 @@ export default class Header extends Component {
         if(children === null || children.length < 1 ) {
             return null;
         }
-        return (<div className=" d-flex flex-row justify-content-center align-items-center pl-lg-5">
+        return (<div className=" d-flex flex-lg-row flex-column justify-content-lg-center justify-content-start align-items-lg-center align-items-start pl-lg-5">
                     {children.map(
                         (item,index) => { return this.renderNavItem(item,index)}
                     )}
@@ -31,7 +31,7 @@ export default class Header extends Component {
 
     renderNavItem(item, index) {
         return (
-            <div className="d-flex flex-column justify-content-center align-items-center pl-lg-5">
+            <div className="d-flex flex-lg-column flex-row mb-lg-0 mb-2 justify-content-center align-items-center pl-lg-5">
                  <img className="nav-icons" src={item.iconClass} alt="icons"/>
                  <span className="d-block">{item.iconLabel}</span>
             </div>
@@ -51,7 +51,7 @@ export default class Header extends Component {
             <Navbar.Collapse id="responsive-navbar-nav" className="fnp__navbar py-2 pl-lg-2 px-0">
               <Nav className="mr-auto">
               <Form inline>
-                <FormControl type="text" className="nav-input mr-sm-2" placeholder={this.props.searchButtonText} />
+                <FormControl type="text" className="nav-input mr-sm-2 mb-lg-0 mb-2" placeholder={this.props.searchButtonText} />
                 <Button variant="outline-info" className="btn-success btn-label">{this.props.ctalabel}</Button>
               </Form>
               </Nav>
