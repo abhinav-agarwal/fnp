@@ -21,6 +21,7 @@ import './Header/Header';
 import './Categories/Categories';
 import './BestSeller/BestSeller';
 import './GiftFinder/GiftFinder';
+import './Footer/Footer';
 import './Trending/Trending';
 import './Hero/Hero';
 import './Container/Container';
