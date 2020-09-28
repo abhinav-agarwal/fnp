@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {MapTo} from '@adobe/aem-react-editable-components';
+import React from 'react';
+import {MapTo, Container} from '@adobe/aem-react-editable-components';
 import { Carousel} from 'react-bootstrap';
 
 require('./Hero.css');
@@ -13,7 +13,15 @@ export const HeroEditConfig = {
     }
 };
 
-export default class Hero extends Component {
+export default class Hero extends Container<P, S> {
+
+get containerProps() {
+  console.log('abcd');
+    let attrs = super.containerProps;
+    attrs.className =
+      (attrs.className || '') + ' page ' + (this.props.cssClassNames || '');
+    return attrs;
+  }
 
     renderImages(children) {
         if(children === null || children.length < 1 ) {

@@ -1,5 +1,5 @@
-import { MapTo } from '@adobe/aem-react-editable-components';
-import React, { Component } from 'react';
+import { MapTo,Container } from '@adobe/aem-react-editable-components';
+import React from 'react';
 import {Link} from "react-router-dom";
 
 require('./Title.css');
@@ -12,8 +12,15 @@ const TextEditConfig = {
   }
 };
 
-class Title extends Component {
+class Title extends Container<P, S> {
 
+  get containerProps() {
+  console.log('abcd');
+    let attrs = super.containerProps;
+    attrs.className =
+      (attrs.className || '') + ' page ' + (this.props.cssClassNames || '');
+    return attrs;
+  }
   
   get textContent() {
     const CustomTag = `${this.props.type}`;
