@@ -18,7 +18,7 @@ class Footer extends Component {
     }
     return(
       <div className="footer-component py-4 d-flex justify-content-center align-items-center">
-        <div className="pl-3">{this.props.logoSrc}</div>
+        <div className="pr-3"><img src={this.props.logoSrc}/></div>
         <div>{this.props.disclaimer}</div>
       </div>
     );
