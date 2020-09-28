@@ -1,5 +1,6 @@
 import React from 'react';
-import {MapTo, Container} from '@adobe/aem-react-editable-components';
+
+import {withComponentMappingContext, Container, MapTo} from '@adobe/aem-react-editable-components';
 import { Carousel} from 'react-bootstrap';
 
 require('./Hero.css');
@@ -8,20 +9,17 @@ export const HeroEditConfig = {
 
     emptyLabel: 'Hero',
 
-    isEmpty: function(props) {
+    isBlank: function(props) {
         return !props || !props.imageDetails || props.imageDetails.length < 1 ;
-    }
+    },
+
+    isEmpty: function(props) {
+            return !props || !props.cqItemsOrder || props.cqItemsOrder.length === 0;
+        }
 };
 
-export default class Hero extends Container<P, S> {
 
-get containerProps() {
-  console.log('abcd');
-    let attrs = super.containerProps;
-    attrs.className =
-      (attrs.className || '') + ' page ' + (this.props.cssClassNames || '');
-    return attrs;
-  }
+export default class Hero extends Container<M, S> {
 
     renderImages(children) {
         if(children === null || children.length < 1 ) {
@@ -46,18 +44,17 @@ get containerProps() {
    }
 
     render() {
-        if(HeroEditConfig.isEmpty(this.props)) {
+        if(HeroEditConfig.isBlank(this.props)) {
             return null;
         }
         return (
                 <div class="Hero">
-                   
                     {this.renderImages(this.props.imageDetails)}
-                    
+                    { super.childComponents }
                 </div>
             
         );
     }
 }
 
-MapTo('fnp/components/hero')(Hero, HeroEditConfig);
+MapTo('fnp/components/hero')(withComponentMappingContext(Hero), HeroEditConfig);
