@@ -13,6 +13,7 @@ const TextEditConfig = {
 };
 
 class Title extends Component {
+
   
   get textContent() {
     const CustomTag = `${this.props.type}`;
