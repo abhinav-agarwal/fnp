@@ -35,4 +35,9 @@
 
 .Header {
   background-color: #fff;
+  position: fixed;
+  top:0;
+  z-index: 99;
+  width:100%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
